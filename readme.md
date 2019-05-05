@@ -14,6 +14,7 @@ This repo is used as a template for swup themes. Steps to publish your own swup 
 
 - Checkout existing themes before creating one.
 - Swup instance is automatically assigned to the theme instance and can be accessed under `this.swup` in `mount`/`unmount` methods.
+* Swup theme automatically sets swup animationSelector option to `[class*="swup-transition-"]` to prevent bugs related to other libraries using the same classes. Use `swup-transition-*` for your theme classes. 
 - Themes get a few special helper methods:
     * `applyStyles` to prepend style tag with defined content in the head tag.
     * `addClassName` to add `swup-transition-[name]` classname to an element.
