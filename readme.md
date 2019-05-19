@@ -29,6 +29,8 @@ This repo is used as a template for swup themes. Steps to publish your own swup 
 
 # Swup [Theme Name] Theme
 
+This is a theme for [swup](https://swup.js.org/) - complete, flexible, extensible and easy to use page transition library for your web.
+
 ## Instalation
 
 This theme can be installed with npm
