@@ -4,27 +4,41 @@ import styles from './index.css';
 export default class ThemeName extends Theme {
 	name = 'ThemeName';
 
-	constructor(options) {
+	/* Default options */
+	defaults = {
+		mainElement: '#swup'
+	};
+
+	/**
+	 * Executed each time an instance of this theme is created.
+	 * Can be used for things that don't rely on access to the swup instance.
+	 */
+	constructor(options = {}) {
 		super();
 
-		const defaultOptions = {
-			mainElement: '#swup'
-		};
-
-		this.options = {
-			...defaultOptions,
-			...options
-		};
+		/* Merge default options and user options */
+		this.options = { ...this.defaults, options };
 	}
 
+	/**
+	 * Executed when swup is initialized with this theme.
+	 * You can use this.swup here to access the swup instance.
+	 */
 	mount() {
-		// apply imported styles
+		// Apply imported styles
 		this.applyStyles(styles);
 
-		// add classname to
+		// Add classname to element
 		this.addClassName(this.options.mainElement, 'main');
 
-		// add HTML structure to body if needed
+		// Append elements to body if needed
 		this.applyHTML('<div></div>');
 	}
+
+	/**
+	 * Executed when a swup instance with this theme is disabled.
+	 * You can use this.swup here to access the swup instance.
+	 * Make sure to undo any DOM changes and remove event listeners here.
+	 */
+	unmount() {}
 }
